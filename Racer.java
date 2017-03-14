@@ -1,34 +1,5 @@
 import javax.swing.*;
-/**
- * uses the GameArena APIs to implement a simple top down racing game.
- *
- * The graphical output of the game is provided as a Swing component,
- * so that it can be added into any Swing application, just like a JButton etc.
- *
- * To allow users to control the game as they see fit, start(), stop() and update()
- * methods are provided. start() should be used to create a new game, stop() to terminate
- * a running game, and update() should be called in a loop to update gameplay and graphics
- *
- * Simple example of use:
- *
- * <pre>
- *
- *  JFrame window = new JFrame();
- *  Racer r = new Racer();
- *  window.setTitle("Racer");
- *  window.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
- *  window.setContentPane(r.getPanel());
- *  window.setVisible(true);
- *
- *  r.start();
- *
- *  while(r.isPlaying())
- *      r.update();
- *
- * </pre>
- *
- * @author Joe Finney (joe@comp.lancs.ac.uk)
- */
+
 public class Racer 
 {
     public static final double PLAYER_SPEED = 5;
@@ -38,14 +9,14 @@ public class Racer
     public static final int SCREEN_WIDTH = 800;
     public static final int SCREEN_HEIGHT = 600;
 
-    private GameArena arena;
+    public GameArena arena;
     private Car player;
     private RoadSegment[] road = new RoadSegment[SCREEN_HEIGHT / ROAD_SEGMENT_HEIGHT + 1];
 
     private double currentRoadX = SCREEN_WIDTH/2;
-    private double speed = 2.0;
+    private double speed = 6.0;
     private boolean playing = false;
-    private int score = 0;
+    public int score = 0;
 
     /**
      * Creates a new instance of the Racer racing game.
@@ -74,9 +45,10 @@ public class Racer
     {
         return score;
     }
+	
 
     /**
-     * Starts a new game, if the game is not alreayd running.
+     * Starts a new game, if the game is not already running.
      */
     public void start()
     {

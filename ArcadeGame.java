@@ -53,6 +53,17 @@ public ArcadeGame()
 	RPanel.setVisible(true);
 	SPanel.setVisible(true);
 }
+	public void play()
+	{
+	r.start();
+	while (true){
+		r.arena.pause();
+			while (r.isPlaying()){
+				r.update();
+				scoreL.setText("Score:" + r.getScore());
+								 }
+				}
+	}	
 
 public void actionPerformed(ActionEvent e)
 	{
