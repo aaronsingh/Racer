@@ -15,7 +15,7 @@ public class Racer
     private RoadSegment[] road = new RoadSegment[SCREEN_HEIGHT / ROAD_SEGMENT_HEIGHT + 1];
 
     private double currentRoadX = SCREEN_WIDTH/2;
-    private double speed = 6.0;
+    private double speed = 7.0;
     private boolean playing = false;
     public int score = 0;
 

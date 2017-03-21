@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class ArcadeGame implements ActionListener              //making a class called ArcadeGame and it will be processing an action event
+public class ArcadeGame implements ActionListener     //making a class called ArcadeGame and it will be processing an action event
 {
 
 	//JPanel's used as container's for all the components to show on screen
@@ -19,18 +19,18 @@ public class ArcadeGame implements ActionListener              //making a class 
 	int Score = 0;
 	
 	Racer r;
-	FlowLayout f; //Declaring the Flowlayout to F
+	FlowLayout f;                                     //Declaring the Flowlayout to F
 	
 public ArcadeGame()
 {
 	window = new JFrame();
 	mainPanel = new JPanel();
-	buttonPanel = new JPanel();  //The panels will help me group all the componants together
+	buttonPanel = new JPanel();                     //The panels will help me group all the componants together
 	RPanel = new JPanel();
 	scorePanel = new JPanel();
 	scoreL = new JLabel ("Score:");
-	startB = new JButton("Start");  // assigning the startB variable name to Start 
-	stopB = new JButton("Stop");   // assigning the StopB variable name to Stop
+	startB = new JButton("Start");                 // assigning the startB variable name to Start 
+	stopB = new JButton("Stop");                   // assigning the StopB variable name to Stop
 
 	r = new Racer();
 	f = new FlowLayout();
@@ -40,8 +40,8 @@ public ArcadeGame()
 	buttonPanel.add(stopB);
 	
 	window.setTitle("Racer");    
-	window.setContentPane(mainPanel);
-	window.setSize(ScreenWidth, ScreenHeight); // Sets the componants of the Jframe
+	window.setContentPane(mainPanel);            //add the main panel to content pane 
+	window.setSize(ScreenWidth, ScreenHeight);   // Sets the componants of the Jframe
 	RPanel.add(r.getPanel());
 	
 	scorePanel.setLayout(f);	
@@ -65,30 +65,28 @@ public ArcadeGame()
 }
 	public void play()
 	{
-		r.start();  // The game will start 
-		
-	//It will keep on updating the score on the screen
-		while (true){
-			r.arena.pause();
-				while (r.isPlaying()){
-					r.update();
-						scoreL.setText("Score:" + r.getScore());
+		r.start();  // The game will start					
+			while (true){
+				r.arena.pause();
+					while (r.isPlaying()){
+						r.update();
+							scoreL.setText("Score:" + r.getScore());  //It will keep on updating the score on the screen
 					 }
 			}
 	}	
 
-public void actionPerformed(ActionEvent e) //To make the buttons work
+public void actionPerformed(ActionEvent e) //Using the method to make the buttons work
 	{
-		if(e.getSource()==startB)
+		if(e.getSource()==startB)         //When start button is clicked the game plays 
 			r.start();
 		
-		if(e.getSource()==stopB)
+		if(e.getSource()==stopB)          ////When stop button is clicked the game stops not pauses
 			r.stop();
 	}
 	
 public static void main(String args[])  //main operator
 	{
-		ArcadeGame a = new ArcadeGame();  
+		ArcadeGame a = new ArcadeGame();  //New instance of the main method
 			a.play(); 
 	}
 } 
