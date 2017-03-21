@@ -5,7 +5,7 @@
  */
 public class RoadSegment
 {
-    public static String ROUGH_COLOUR = "#008000";
+    public static String ROUGH_COLOUR = "#228B22";
     public static String KERB_COLOUR = "#808080";
     public static double KERB_WIDTH = 4;
 
