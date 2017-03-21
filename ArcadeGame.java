@@ -16,7 +16,6 @@ public class ArcadeGame implements ActionListener     //making a class called Ar
 	// Declare the (integer) vairables for the hieght and width of the screen 
 	int ScreenHeight = 800; 
 	int ScreenWidth = 800;	
-	int Score = 0;
 	
 	Racer r;
 	FlowLayout f;                                     //Declaring the Flowlayout to F
